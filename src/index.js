@@ -9,13 +9,16 @@ function onSearch(e) {
   e.preventDefault();
 
   const form = e.currentTarget;
+  console.log(e.currentTarget)
   const searchQuery = form.elements.query.value;
-  API.fetchCountry(searchQuery).then(renderCountryCard).catch(onFetchError).finally(() => form.reset());
- };
+   API.fetchCountry(searchQuery)
+    .then(renderCountryCard)
+    .catch(onFetchError)
+    .finally(() => form.reset());
+};
 
 function renderCountryCard(country) {
    const markup = countryTpl(country[0]);
-  
   refs.cardContainer.innerHTML = markup;
 };
 function onFetchError(error) {
