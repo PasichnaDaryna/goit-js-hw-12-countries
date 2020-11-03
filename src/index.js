@@ -6,7 +6,7 @@ const debounce = require('lodash.debounce');
 
 
 const refs = getRefs();
-refs.searchForm.addEventListener('input', debounce(onSearch, 500));
+refs.searchForm.addEventListener('input', debounce(onSearch, 500))
 function onSearch(e) {
   e.preventDefault();
   const form = e.currentTarget;
