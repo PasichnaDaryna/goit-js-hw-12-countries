@@ -1,8 +1,12 @@
 import countryTpl from "./templates/country-card.hbs";
-import API from "./api-service";
+import API from "./fetchCountries";
 import getRefs from "./get-refs";
+
+const debounce = require('lodash.debounce');
+
+
 const refs = getRefs();
-refs.searchForm.addEventListener('input', onSearch)
+refs.searchForm.addEventListener('input', debounce(onSearch, 500));
 function onSearch(e) {
   e.preventDefault();
   const form = e.currentTarget;
