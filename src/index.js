@@ -1,6 +1,6 @@
 import countriesApi from './fetchCountries';
 import countryTpl from './templates/country-card.hbs';
-import contriesTpl from './templates/country-card.hbs';
+import countriesTpl from './templates/country-card.hbs';
 import getRefs from './get-refs'
 
 
@@ -38,7 +38,7 @@ function renderMarkup(countries) {
     markupContries(countryTpl, countries);
   } else if (countries.length > 1 && countries.length <= 10) {
     resetSearch();
-    markupContries(contriesTpl, countries);
+    markupContries(countriesTpl, countries);
   } else if (countries.length > 10) {
     resultMessage(
       error,
